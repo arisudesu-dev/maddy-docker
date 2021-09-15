@@ -1,4 +1,4 @@
-# maddy-docker ✉️🐳
+# maddy-docker ✉️+🐳
 
 ![Build status](https://img.shields.io/badge/build-works%20on%20my%20machine-brightgreen)
 
