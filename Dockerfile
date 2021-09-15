@@ -26,6 +26,7 @@ COPY --from=build-env /pkg/usr/local/bin/maddyctl /usr/bin/maddyctl
 EXPOSE 25 143 993 587 465
 VOLUME ["/var/lib/maddy"]
 
-# There is no entrypoint, but there is default shell command
-# to allow executing `maddy` and `maddyctl` from docker run.
+COPY docker-entrypoint.sh /usr/local/bin/
+ENTRYPOINT ["docker-entrypoint.sh"]
+
 CMD ["/usr/bin/maddy"]
