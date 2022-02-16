@@ -1,4 +1,4 @@
-FROM golang:1.16.5-alpine3.14 AS build-env
+FROM golang:1.17.7-alpine3.15 AS build-env
 
 COPY maddy /maddy/
 WORKDIR /maddy/
@@ -15,7 +15,7 @@ RUN sed -Ei 's!^tls .+!tls file /etc/maddy/certs/tls_cert.pem /etc/maddy/certs/t
 
 RUN ./build.sh --builddir /tmp --destdir /pkg/ build install
 
-FROM alpine:3.14.0
+FROM alpine:3.15.0
 LABEL maintainer="arisudesu@yandex.ru"
 
 RUN apk --no-cache add ca-certificates
