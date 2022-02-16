@@ -15,7 +15,7 @@ RUN sed -Ei 's!^tls .+!tls file /etc/maddy/certs/tls_cert.pem /etc/maddy/certs/t
 
 RUN ./build.sh --builddir /tmp --destdir /pkg/ build install
 
-FROM alpine:3.15.0
+FROM alpine:3.15
 LABEL maintainer="arisudesu@yandex.ru"
 
 RUN apk --no-cache add ca-certificates
